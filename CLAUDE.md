@@ -50,7 +50,7 @@ test-agent/
 - **Phase 0**: 环境搭建 — 安装 SDK、验证 Agent/MCP Tool/Subagent/Skills 基本能力
 - **Phase 1**: Skill + CLAUDE.md + Hooks — 编写 Agent 行为规则和安全约束
 - **Phase 2**: 在 RAG 项目上运行 — 从纯函数到组件到 Pipeline 逐步验证
-- **Phase 3**: Subagent + 评估 + 打磨 — 并行生成、评估报告、README
+- **Phase 3**: 评估 + 文档 — 评估报告、README
 
 
 ## Important Notes
