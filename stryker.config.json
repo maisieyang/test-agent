@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker/master/packages/core/schema/stryker-core.schema.json",
+  "mutate": [
+    "src/**/*.ts",
+    "!src/**/__tests__/**",
+    "!src/verify.ts"
+  ],
+  "testRunner": "jest",
+  "jest": {
+    "configFile": "jest.config.ts"
+  },
+  "checkers": ["typescript"],
+  "tsconfigFile": "tsconfig.json",
+  "reporters": ["clear-text", "html"],
+  "concurrency": 2,
+  "testRunnerNodeArgs": ["--experimental-vm-modules"]
+}
