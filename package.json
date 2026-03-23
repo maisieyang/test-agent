@@ -1,0 +1,24 @@
+{
+  "name": "test-agent",
+  "version": "1.0.0",
+  "description": "Autonomous test generation agent built with Claude Agent SDK",
+  "type": "module",
+  "main": "dist/agent.js",
+  "scripts": {
+    "start": "npx tsx src/agent.ts",
+    "build": "tsc",
+    "dev": "npx tsx --watch src/agent.ts"
+  },
+  "keywords": [],
+  "author": "yangxiyue",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.81",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
