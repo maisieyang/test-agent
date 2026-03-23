@@ -1,5 +1,5 @@
 {
-  "name": "test-agent",
+  "name": "test-generation-agent",
   "version": "1.0.0",
   "description": "Autonomous test generation agent built with Claude Agent SDK",
   "type": "module",
