@@ -7,7 +7,9 @@
   "scripts": {
     "start": "npx tsx src/agent.ts",
     "build": "tsc",
-    "dev": "npx tsx --watch src/agent.ts"
+    "dev": "npx tsx --watch src/agent.ts",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test:coverage": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage"
   },
   "keywords": [],
   "author": "yangxiyue",
@@ -17,7 +19,10 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^25.5.0",
+    "jest": "^30.3.0",
+    "ts-jest": "^29.4.6",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }

@@ -23,7 +23,7 @@ const BLOCKED_PATTERNS = [
   /\/scripts\//,             // Script files
 ];
 
-function isTestRelatedPath(filePath: string): boolean {
+export function isTestRelatedPath(filePath: string): boolean {
   if (BLOCKED_PATTERNS.some((p) => p.test(filePath))) return false;
   if (ALLOWED_PATTERNS.some((p) => p.test(filePath))) return true;
   return false;

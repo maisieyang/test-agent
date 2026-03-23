@@ -43,7 +43,7 @@ interface ParsedCoverage {
   fileCount: number;
 }
 
-function parseCoverageSummary(data: CoverageSummary): ParsedCoverage {
+export function parseCoverageSummary(data: CoverageSummary): ParsedCoverage {
   const total = data["total"];
   const files = Object.entries(data).filter(([key]) => key !== "total");
 

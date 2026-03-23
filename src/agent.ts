@@ -3,7 +3,7 @@ import { coverageServer } from "./tools/coverage-parser.js";
 import { createSafetyHook } from "./hooks/safety.js";
 
 const TARGET_PROJECT = "/Users/yangxiyue/2026/aa/confluence-qa-assistant";
-const AGENT_PROJECT = "/Users/yangxiyue/2026/aa/test-agent";
+const AGENT_PROJECT = "/Users/yangxiyue/2026/aa/test-generation-agent";
 
 // Run modes:
 //   "pure-functions" — bm25, tokenizer, fusion
@@ -13,7 +13,7 @@ const AGENT_PROJECT = "/Users/yangxiyue/2026/aa/test-agent";
 //   "full"           — autonomous coverage-driven full run
 const mode = process.argv[2] || "pure-functions";
 
-const TARGET_MODULES: Record<string, { files: string; description: string }> = {
+export const TARGET_MODULES: Record<string, { files: string; description: string }> = {
   "pure-functions": {
     files: "src/lib/search/bm25.ts, src/lib/search/tokenizer.ts, src/lib/search/fusion.ts",
     description: "Pure function unit tests for search modules (BM25, tokenizer, fusion). No mocks needed — test inputs and outputs directly.",
@@ -36,7 +36,7 @@ const TARGET_MODULES: Record<string, { files: string; description: string }> = {
   },
 };
 
-function buildPrompt(runMode: string): string {
+export function buildPrompt(runMode: string): string {
   const target = TARGET_MODULES[runMode];
   if (!target) {
     console.error(`Unknown mode: ${runMode}. Available: ${Object.keys(TARGET_MODULES).join(", ")}`);
@@ -131,4 +131,10 @@ async function main() {
   console.log("✅ Agent finished.\n");
 }
 
-main().catch(console.error);
+// Only run when executed directly, not when imported for testing
+const isDirectRun =
+  process.argv[1]?.endsWith("agent.ts") ||
+  process.argv[1]?.endsWith("agent.js");
+if (isDirectRun) {
+  main().catch(console.error);
+}
